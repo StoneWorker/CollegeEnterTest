@@ -1,0 +1,61 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+  <img width="20%" alt="Angular" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+</div>
+<!--
+<h2>Here are some links to help you start: </h2>
+<ul>
+  <li>
+    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
+  </li>
+  <li>
+    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
+  </li>
+  <li>
+    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
+  </li>
+</ul>
+-->
+<marquee behavior="alternate" width="100%" height="30" BGColor="yellow" loop="-1" onmouseout=this.start() onmouseover=this.stop()><font color=red>祝你金榜题名</font></marquee>
+<br/>
+<form (ngSubmit)="submit()" #submitForm="ngForm">
+  <tr></tr>
+  <HR>
+  <tr>
+    <th> </th>
+    <label >第一年</label>
+    <label >第二年</label>
+    <label >第三年</label>
+  </tr>
+  <tr>
+    <th>往年专业分数线:</th>
+    <input type="text" id="number1" [(ngModel)]="number1" name="number11" #number11="ngModel" required>
+    <input type="text" id="number2" [(ngModel)]="number2" name="number21" #number21="ngModel" required>
+    <input type="text" id="number3" [(ngModel)]="number3" name="number31" #number31="ngModel" required>
+  </tr>
+  <tr>
+    <th>往年省控线:</th>    
+    <input type="text" id="number4" [(ngModel)]="number4" name="number41" #number41="ngModel" required>
+    <input type="text" id="number5" [(ngModel)]="number5" name="number51" #number51="ngModel" required>
+    <input type="text" id="number6" [(ngModel)]="number6" name="number61" #number61="ngModel" required>
+  </tr>
+  <HR>
+  <tr>
+    <th>今年省控线:</th>
+    <input type="text" id="number7" [(ngModel)]="number7" name="number71" #number71="ngModel" required>
+  </tr>
+  <tr>
+    <th>今年你的成绩:</th>
+    <input type="text" id="number8" [(ngModel)]="number8" name="number81" #number81="ngModel" required>
+  </tr>
+  <HR>
+  <label *ngIf="!submitForm.form.valid" style="color:rgb(243, 12, 62);width:90%">Please fill table above!</label>
+  <br>
+  <button type="submit" [disabled]="!submitForm.form.valid">提交</button>
+</form>
+<br>
+<label style="color:#0b90dd;width:25%">你被录取概率:</label>
+<label style="color:#d31928;text-align: left">{{num}}%</label>
